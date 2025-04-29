@@ -9,6 +9,9 @@ def calculate_goldrate(USD_INR):
     scaler_input=scaler.transform(np.array(USD_INR).reshape(1,-1))
     return regressor.predict(scaler_input)[0][0].round(2)
 
+calculate_goldrate(80)
+
+
 demo = gr.Interface(
     fn=calculate_goldrate,
     inputs=["number"],
